@@ -376,6 +376,7 @@ The Telegram integration should be implemented as a lightweight webhook handler 
 - **Backend + AI**:
   - FastAPI app on Render (single service initially).
   - Scale to separate services (API vs AI) only if needed.
+  - Expose a secured webhook endpoint for the Telegram bot (e.g. `/api/v1/telegram/webhook`). Hosters like Render or Vercel can provide the public URL; ensure TLS, webhook secret verification, and consider running the webhook handler as a small worker/service to avoid impacting primary request latency.
 - **Database**:
   - Supabase free/low-tier project (Postgres + Auth + Storage + Vector).
 - **Budget target**: < USD 50/month for infra + AI during early testing.

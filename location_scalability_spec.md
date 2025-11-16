@@ -99,6 +99,8 @@ The AI assistant must:
 - Switch between location contexts on command
 - Filter embedding search by selected location
 
+- Support a Telegram bot channel for quick Q&A and per-location notifications. The bot should allow users to set or switch `location` via commands, request site/species info, and subscribe to optional push notifications (e.g. sighting alerts) scoped to a location.
+
 ### Example Queries
 - "Where can I see turtles in Perhentian?"
 - "Which dive sites in Redang are suitable for beginners?"
