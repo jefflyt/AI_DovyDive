@@ -11,12 +11,18 @@ Project layout (skeleton):
 		- `app/services/` - business logic
 		- `app/ai/` - multi-agent orchestrator
 	- `frontend/` - Next.js app and components
+	- `dovydive/` - (existing full Next.js app). Moved into `src/frontend/` for canonical source. If you prefer the top-level copy as canonical, restore accordingly.
+
 - `infra/` - Docker, Render, and deployment configs
 - `docs/` - design specs and diagrams
 - `data/seeds/` - CSV/seed data
 - `scripts/` - helper scripts (seed, migrations)
 - `tests/` - unit and integration tests
 - `.github/workflows/` - CI configs
+
+Notes:
+
+- Existing full Next.js app at top-level `dovydive/` has been copied into `src/frontend/` as the canonical frontend source. Remove or archive the top-level copy if you want a single canonical location.
 
 Next steps:
 
