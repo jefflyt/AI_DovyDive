@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <div style={{maxWidth: 900, margin: '2rem auto', padding: '0 1rem'}}>
       <h1>DovyDive</h1>

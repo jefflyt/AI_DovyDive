@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 type Msg = { from: 'user' | 'assistant'; text: string }
 
-export default function Chat(): JSX.Element {
+export default function Chat() {
   const [input, setInput] = useState<string>('')
   const [msgs, setMsgs] = useState<Msg[]>([])
   function send(){
