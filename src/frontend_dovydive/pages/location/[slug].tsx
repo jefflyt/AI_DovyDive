@@ -2,9 +2,9 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-export default function LocationDetail(){
+export default function LocationDetail({ slug: slugProp }:{ slug?: string }){
   const router = useRouter()
-  const { slug } = router.query
+  const slug = typeof slugProp === 'string' && slugProp.length > 0 ? slugProp : router.query.slug
 
   const name = typeof slug === 'string' ? (slug === 'perhentian' ? 'Perhentian' : 'Tioman') : 'Location'
   const spots = ['Coral Garden', 'Shark Point', 'Wreck Alley']
@@ -42,10 +42,19 @@ export default function LocationDetail(){
             <h4 style={{marginTop:0}}>Quick Info</h4>
             <div style={{color:'var(--muted)'}}>Best months: Apr - Oct</div>
             <div style={{color:'var(--muted)',marginTop:8}}>Visibility: 10-30m</div>
-            <Link href="/location"><button className="btn" style={{marginTop:12}}>Back to Locations</button></Link>
+            <Link href="/location" className="btn" style={{marginTop:12}}>Back to Locations</Link>
           </div>
         </aside>
       </div>
     </div>
   )
 }
+
+  export async function getServerSideProps(context:any) {
+    const { slug } = context.params || {}
+    return {
+      props: {
+        slug: typeof slug === 'string' ? slug : null,
+      },
+    }
+  }
