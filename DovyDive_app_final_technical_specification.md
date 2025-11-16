@@ -90,6 +90,8 @@ Priority ranking (from user): **d, a, c, b, e**
   - `POST /api/v1/chat` for message
   - Optional streaming via SSE or WebSockets
 
+- `Telegram Bot`: Provide a Telegram bot webhook (e.g. `POST /api/v1/telegram/webhook`) that forwards user messages and commands to the AI orchestrator. The bot should support simple commands to set `location` (e.g. `/location tioman`), request site/species info (e.g. `/site [slug]`, `/species [name]`), and surface short RAG-grounded answers. Support optional account-linking (map Telegram user to Supabase user), enforce webhook secret verification, rate limiting, and reply via the Telegram API.
+
 ---
 
 ## 4. Backend Architecture (FastAPI)
@@ -355,6 +357,14 @@ save_chat_message(session, sender="ASSISTANT", content=final_answer)
 
 return ChatResponse(message=final_answer, trace=intermediate_results)
 ```
+
+Channels: The orchestrator should support multiple channels (web chat, mobile, and Telegram). When the incoming message `source` is `TELEGRAM`, the system should:
+- verify the webhook signature/secret,
+- include `telegram.user_id` in session/context,
+- process the message the same way as a web chat message, and
+- send the response back through the Telegram Bot API (including handling messages longer than Telegram limits, sending attachments or quick-reply buttons where appropriate).
+
+The Telegram integration should be implemented as a lightweight webhook handler that delegates to the same orchestrator pipeline so behavior and guardrails remain consistent across channels.
 
 ---
 
