@@ -2,13 +2,12 @@
 > dovydive@0.1.0 dev
 > next dev
 
- ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
    ▲ Next.js 16.0.3 (Turbopack)
-   - Local:         http://localhost:3001
-   - Network:       http://10.0.11.4:3001
+   - Local:         http://localhost:3000
+   - Network:       http://10.0.3.220:3000
 
  ✓ Starting...
- ✓ Ready in 840ms
- GET / 200 in 1975ms (compile: 1935ms, render: 39ms)
- GET /_next/data/development/location/tioman.json?slug=tioman 200 in 20ms (compile: 13ms, render: 8ms)
+ ✓ Ready in 1329ms
+ GET / 200 in 2.0s (compile: 1987ms, render: 39ms)
+ GET /_next/data/development/location/tioman.json?slug=tioman 200 in 32ms (compile: 17ms, render: 15ms)
 [?25h

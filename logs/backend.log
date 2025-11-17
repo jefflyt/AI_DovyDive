@@ -1,2 +1,11 @@
 INFO:     Will watch for changes in these directories: ['/workspaces/AI_DovyDive']
-ERROR:    [Errno 98] Address already in use
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [8535] using WatchFiles
+INFO:     Started server process [8538]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8538]
+INFO:     Stopping reloader process [8535]
