@@ -6,41 +6,63 @@ export default function Home(){
     <div className="container">
       <div className="hero">
         <section>
-          <h1>DovyDive — Your AI Dive Assistant</h1>
-          <p style={{color:'var(--muted)'}}>Explore dive locations, identify species, and get local tips — powered by a demo AI assistant and curated content.</p>
+          <div className="hero-badge">AI-Powered Dive Assistant</div>
+          <h1>Discover Your Next Dive Adventure</h1>
+          <p className="hero-subtitle">Explore stunning dive locations, identify marine species, and get expert local tips — all powered by AI technology and curated dive content.</p>
 
-          <div style={{marginTop:16}} className="card">
-            <h3 style={{margin:'0 0 .5rem 0'}}>Highlights</h3>
-            <ul style={{margin:'0',color:'var(--muted)'}}>
-              <li>Multi-location content (Tioman, Perhentian)</li>
-              <li>AI Chat for dive planning and species guidance</li>
-              <li>Location pages with photos and top spots</li>
-            </ul>
+          <div className="cta-buttons">
+            <Link href="/location"><button className="btn btn-primary">Explore Locations</button></Link>
+            <Link href="/chat"><button className="btn btn-secondary">Chat with AI</button></Link>
           </div>
 
-          <div style={{marginTop:12}}>
-            <Link href="/location"><button className="btn">Browse Locations</button></Link>
-            <Link href="/chat"><button className="btn" style={{marginLeft:8}}>Open AI Chat</button></Link>
+          <div className="features-grid">
+            <div className="feature-item">
+              <div className="feature-icon">🗺️</div>
+              <div className="feature-content">
+                <h3>Multi-Location</h3>
+                <p>Discover Tioman, Perhentian & more</p>
+              </div>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">🤖</div>
+              <div className="feature-content">
+                <h3>AI Assistant</h3>
+                <p>Get dive planning & species guidance</p>
+              </div>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">📸</div>
+              <div className="feature-content">
+                <h3>Rich Content</h3>
+                <p>Photos, spots & detailed information</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <aside className="card">
-          <h4 style={{marginTop:0}}>Featured Spots</h4>
+        <aside className="featured-spots">
+          <h2 className="featured-title">Featured Dive Spots</h2>
           <div className="locations">
-            <div className="loc-card card">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=60&auto=format&fit=crop" alt="Tioman" />
-              <div style={{padding:8}}>
-                <strong>Tioman</strong>
-                <div style={{color:'var(--muted)',fontSize:13}}>Coral gardens & gentle slopes</div>
+            <Link href="/location" className="loc-card">
+              <div className="loc-card-image">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=60&auto=format&fit=crop" alt="Tioman Island" />
+                <div className="loc-card-overlay"></div>
               </div>
-            </div>
-            <div className="loc-card card">
-              <img src="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=900&q=60&auto=format&fit=crop" alt="Perhentian" />
-              <div style={{padding:8}}>
-                <strong>Perhentian</strong>
-                <div style={{color:'var(--muted)',fontSize:13}}>Turtles & lively reefs</div>
+              <div className="loc-card-content">
+                <strong>Tioman Island</strong>
+                <div className="loc-card-description">Coral gardens & gentle slopes</div>
               </div>
-            </div>
+            </Link>
+            <Link href="/location" className="loc-card">
+              <div className="loc-card-image">
+                <img src="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=900&q=60&auto=format&fit=crop" alt="Perhentian Islands" />
+                <div className="loc-card-overlay"></div>
+              </div>
+              <div className="loc-card-content">
+                <strong>Perhentian Islands</strong>
+                <div className="loc-card-description">Turtles & lively reefs</div>
+              </div>
+            </Link>
           </div>
         </aside>
       </div>
